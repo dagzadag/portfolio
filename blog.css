@@ -290,6 +290,7 @@ ul#scene {
     background: transparent;
     color: #dfe6e9;
     text-decoration: none;
+    font-family: 'Cairo', sans-serif;
     transition: 0.5s;
 }
 .btn-portfolio:hover,.btn-contact:hover {
