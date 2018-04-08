@@ -218,6 +218,7 @@ header.sticky {
     right: 0;
     transform: translateY(-200%);
     transition: 0.3s;
+    z-index:5;
 }
 .nav-wrapper{
     max-width: 1000px;
