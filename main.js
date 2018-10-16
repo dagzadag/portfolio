@@ -8,8 +8,11 @@ function screenShot(){
   	//document.getElementById("captcha_button").click();
  	console.log("started");
 	var element = document.getElementById("captcha");
-	canvas.toBlob(function(blob) {
+	html2canvas(element).then(function(canvas) {
+   	// Export canvas as a blob 
+  	canvas.toBlob(function(blob) {
         // Generate file download
         window.saveAs(blob, "yourwebsite_screenshot.png");
     });
+});
 }
