@@ -12,13 +12,7 @@ function screenShot(){
    	// Export canvas as a blob 
   	canvas.toBlob(function(blob) {
         // Generate file download
-	var dater = new Date();
-	var seconds = dater.getSeconds();
-	var minutes = dater.getMinutes();
-	var hour = dater.getHours();
-	var year = dater.getFullYear();
-	var result = hour + seconds + minutes + year;
-        window.saveAs(blob, result+".png");
+        window.saveAs(blob, "screenshot.png");
     });
 });
 }
