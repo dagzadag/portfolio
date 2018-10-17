@@ -12,7 +12,8 @@ function screenShot(){
    	// Export canvas as a blob 
   	canvas.toBlob(function(blob) {
         // Generate file download
-        window.saveAs(blob, "yourwebsite_screenshot.png");
+	var dater = new Date();
+        window.saveAs(blob, dater.getTime()+".png");
     });
 });
 }
