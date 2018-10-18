@@ -16,3 +16,29 @@ function screenShot(){
     });
 });
 }
+function changeValue(){
+  var str = document.getElementsByClassName('visualCaptcha-explanation')[0].innerHTML;
+  var firstPart = str.replace('Click or touch the ','Choose from 1 to 5 ');
+  secPart = firstPart.replace('<strong>','<strong style="color:black;">');
+  document.getElementsByClassName('visualCaptcha-explanation')[0].innerHTML = secPart;
+  var img1 = document.getElementsByClassName('imgAnchor')[0].innerHTML ;
+  document.getElementsByClassName('imgAnchor')[0].innerHTML = img1 + '<strong style="color: red;font-size: 20px;">1</strong>';
+  var img2 = document.getElementsByClassName('imgAnchor')[1].innerHTML;
+  document.getElementsByClassName('imgAnchor')[1].innerHTML = img2 + '<strong style="color: red;font-size: 20px;">2</strong>';
+  var img3 = document.getElementsByClassName('imgAnchor')[2].innerHTML;
+  document.getElementsByClassName('imgAnchor')[2].innerHTML = img3 + '<strong style="color: red;font-size: 20px;">3</strong>';
+  var img4 = document.getElementsByClassName('imgAnchor')[3].innerHTML;
+  document.getElementsByClassName('imgAnchor')[3].innerHTML = img4 + '<strong style="color: red;font-size: 20px;">4</strong>';
+  var img5 = document.getElementsByClassName('imgAnchor')[4].innerHTML;
+  document.getElementsByClassName('imgAnchor')[4].innerHTML = img5 + '<strong style="color: red;font-size: 20px;">5</strong>';
+  //var dater = new Date();
+	//var seconds = dater.getSeconds();
+	//var minutes = dater.getMinutes();
+	//var hour = dater.getHours();
+	//var year = dater.getFullYear();
+	var result = issue[Object.keys(issue)[1]] ;
+  var count = '<p  id="waitSec">'+result+'</p>';
+  var docCount = document.getElementById("tips").innerHTML;
+  document.getElementById("tips").innerHTML = docCount + count;
+  //imacro();
+}
