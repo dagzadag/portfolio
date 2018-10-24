@@ -2,24 +2,44 @@
 
 
 function generate() {
-  	var i ;
-           	var arra = [3,6,9,12,13,18,24,30];
-           	var inpu = '<input onclick ="copyMe()" class="form-control copyMe" type="text"  value="'
-           	for (i = 0; i < 8; i++) {
-           		var k = $("#Url").val();
-	            $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + arra[i],
-	                function (data) {
-	                    if (data.Error == "Success") {
-	                        document.getElementById('DOSSIERForm').innerHTML += inpu + data.TotalRembourser.toFixed(2) +'">';
-	                    }
-	                    else { }
+	var k = $("#Url").val();
+    var one = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 3);
+    var tow = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 9);
+    var three = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 18);
+    var four = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 24);
+    var five = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 30);
 
-	                }
-	            );
-			} 
+    setTimeout(function(){
+    var inpu = '<div class="col-lg-3"><input onclick ="copyMe()" class="form-control copyMe" type="text"  value="';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + one.responseJSON.TotalRembourser +'" id="one"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + tow.responseJSON.TotalRembourser +'"id="tow"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + three.responseJSON.TotalRembourser +'"id="three"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + four.responseJSON.TotalRembourser +'"id="four"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + five.responseJSON.TotalRembourser +'"id="five"></div>';    
+    },2000)
 }
-function copyMe(n){
-  var copyText =document.getElementsByClassName("copyMe")[n];
+function copyone(){
+  var one =document.getElementById("one")[];
+  copyText.select();
+  document.execCommand("copy");
+}
+function copytow(){
+  var one =document.getElementById("tow")[];
+  copyText.select();
+  document.execCommand("copy");
+}
+function copythree){
+  var one =document.getElementById("three")[];
+  copyText.select();
+  document.execCommand("copy");
+}
+function copyfour(){
+  var one =document.getElementById("four")[];
+  copyText.select();
+  document.execCommand("copy");
+}
+function copyfive(){
+  var one =document.getElementById("five")[];
   copyText.select();
   document.execCommand("copy");
 }
