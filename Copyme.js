@@ -19,27 +19,27 @@ function generate() {
     },4000)
 }
 function copyone(){
-  var one =document.getElementById("one");
+  var copone =document.getElementById("one");
   copyText.select();
   document.execCommand("copy");
 }
 function copytow(){
-  var one =document.getElementById("tow");
+  var coptow =document.getElementById("tow");
   copyText.select();
   document.execCommand("copy");
 }
-function copythree){
-  var one =document.getElementById("three");
+function copythree(){
+  var copfour =document.getElementById("three");
   copyText.select();
   document.execCommand("copy");
 }
 function copyfour(){
-  var one =document.getElementById("four");
+  var copfive =document.getElementById("four");
   copyText.select();
   document.execCommand("copy");
 }
 function copyfive(){
-  var one =document.getElementById("five")[];
+  var copthree =document.getElementById("five");
   copyText.select();
   document.execCommand("copy");
 }
