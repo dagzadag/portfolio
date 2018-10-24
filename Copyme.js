@@ -16,25 +16,25 @@ function generate() {
 	document.getElementById('DOSSIERForm').innerHTML += inpu + three.responseJSON.TotalRembourser +'"id="three"></div>';
 	document.getElementById('DOSSIERForm').innerHTML += inpu + four.responseJSON.TotalRembourser +'"id="four"></div>';
 	document.getElementById('DOSSIERForm').innerHTML += inpu + five.responseJSON.TotalRembourser +'"id="five"></div>';    
-    },2000)
+    },4000)
 }
 function copyone(){
-  var one =document.getElementById("one")[];
+  var one =document.getElementById("one");
   copyText.select();
   document.execCommand("copy");
 }
 function copytow(){
-  var one =document.getElementById("tow")[];
+  var one =document.getElementById("tow");
   copyText.select();
   document.execCommand("copy");
 }
 function copythree){
-  var one =document.getElementById("three")[];
+  var one =document.getElementById("three");
   copyText.select();
   document.execCommand("copy");
 }
 function copyfour(){
-  var one =document.getElementById("four")[];
+  var one =document.getElementById("four");
   copyText.select();
   document.execCommand("copy");
 }
