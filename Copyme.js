@@ -10,12 +10,12 @@ function generate() {
     var five = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 30);
 
     setTimeout(function(){
-    var inpu = '<div class="col-lg-3"><input onclick ="copyMe()" class="form-control copyMe" type="text"  value="';
-	document.getElementById('DOSSIERForm').innerHTML += inpu + one.responseJSON.TotalRembourser +'" id="one"></div>';
-	document.getElementById('DOSSIERForm').innerHTML += inpu + tow.responseJSON.TotalRembourser +'"id="tow"></div>';
-	document.getElementById('DOSSIERForm').innerHTML += inpu + three.responseJSON.TotalRembourser +'"id="three"></div>';
-	document.getElementById('DOSSIERForm').innerHTML += inpu + four.responseJSON.TotalRembourser +'"id="four"></div>';
-	document.getElementById('DOSSIERForm').innerHTML += inpu + five.responseJSON.TotalRembourser +'"id="five"></div>';    
+    var inpu = '<div class="col-lg-3"><input  class="form-control copyMe" type="text"  value="';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + one.responseJSON.TotalRembourser +'" id="one" onclick ="copyone()"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + tow.responseJSON.TotalRembourser +'"id="tow" onclick ="copytow()"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + three.responseJSON.TotalRembourser +'"id="three" onclick ="copythree()"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + four.responseJSON.TotalRembourser +'"id="four" onclick ="copyfour()"></div>';
+	document.getElementById('DOSSIERForm').innerHTML += inpu + five.responseJSON.TotalRembourser +'"id="five" onclick ="copyfive()"></div>';    
     },4000)
 }
 function copyone(){
