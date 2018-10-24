@@ -18,8 +18,8 @@ function generate() {
 	            );
 			} 
 }
-function copyMe(){
-  var copyText =document.getElementsByClassName("copyMe")[0];
+function copyMe(n){
+  var copyText =document.getElementsByClassName("copyMe")[n];
   copyText.select();
   document.execCommand("copy");
 }
