@@ -20,26 +20,26 @@ function generate() {
 }
 function copyone(){
   var copone =document.getElementById("one");
-  copyone.select();
+  copone.select();
   document.execCommand("copy");
 }
 function copytow(){
   var coptow =document.getElementById("tow");
-  copytow.select();
+  coptow.select();
   document.execCommand("copy");
 }
 function copythree(){
   var copthree =document.getElementById("three");
-  copythree.select();
+  copthree.select();
   document.execCommand("copy");
 }
 function copyfour(){
   var copfour =document.getElementById("four");
-  copyfour.select();
+  copfour.select();
   document.execCommand("copy");
 }
 function copyfive(){
   var copfive =document.getElementById("five");
-  copyfive.select();
+  copfive.select();
   document.execCommand("copy");
 }
