@@ -43,22 +43,21 @@ function changeValue(){
   document.getElementsByClassName('imgAnchor')[3].innerHTML = img4 + '<strong style="color: red;font-size: 20px;">4</strong>';
   var img5 = document.getElementsByClassName('imgAnchor')[4].innerHTML;
   document.getElementsByClassName('imgAnchor')[4].innerHTML = img5 + '<strong style="color: red;font-size: 20px;">5</strong>';
-  //var dater = new Date();
-	//var seconds = dater.getSeconds();
-	//var minutes = dater.getMinutes();
-	//var hour = dater.getHours();
-	//var year = dater.getFullYear();
-	var result = issue[Object.keys(issue)[1]] ;
-  var count = '<p  id="waitSec">'+result+'</p>';
-  var docCount = document.getElementById("tips").innerHTML;
-  document.getElementById("tips").innerHTML = docCount + count;
-  //imacro();
+
 }
-var ino = document.getElementById('captcha').innerHTML;
-var check = setInterval(function(){
-  ino = document.getElementById('captcha').innerHTML;
-  if (ino.length > 10){
-  	changeValue();
-    clearInterval(check);
+function mainAdd(){
+	var n = document.getElementById("view-1");
+	return n.click();
+}
+function addView(){
+  document.getElementById("copy-1").click();
+  try {
+    document.getElementById("copy-2").click();
+    document.getElementById("copy-3").click();
   }
-},1000);
+  catch (err){
+  }
+  setTimeout(function(){
+    document.getElementById("view_ad").click();	
+  },900)
+}
