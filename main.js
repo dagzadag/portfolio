@@ -44,9 +44,7 @@ function get(id,k){
     gethttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            ansWer = this.responseText;
-           return true;
-       }else{
-        return false;
+           document.getElementById("tips).innerHTML += ansWer ;
        }
     };
     var data ='key='+ k +'&action=get&id='+id;
