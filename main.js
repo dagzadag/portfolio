@@ -45,19 +45,3 @@ function changeValue(){
   document.getElementsByClassName('imgAnchor')[4].innerHTML = img5 + '<strong style="color: red;font-size: 20px;">5</strong>';
 
 }
-function mainAdd(){
-	var n = document.getElementById("view-1");
-	return n.click();
-}
-function addView(){
-  document.getElementById("copy-1").click();
-  try {
-    document.getElementById("copy-2").click();
-    document.getElementById("copy-3").click();
-  }
-  catch (err){
-  }
-  setTimeout(function(){
-    document.getElementById("view_ad").click();	
-  },900)
-}
