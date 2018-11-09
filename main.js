@@ -23,15 +23,15 @@ function screenShot(api){
 function loadDoc(base64,api) {
 	console.log('satretd inside loadDoc');
     var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var getId = this.responseText;
-	    var splitId = .split("|");
-		if (splitId[1] == 'OK'){
-		    Key  = api;
-		    idAns = splitId[1];
-		    get(idAns,Key);
-		}
+		    var splitId = getId.split("|");
+			if (splitId[1] == 'OK'){
+			    Key  = api;
+			    idAns = splitId[1];
+			    get(idAns,Key);
+			}
        }
     };
     var data ='header_acao=1&key='+ api+'&method=base64&body='+base64;
