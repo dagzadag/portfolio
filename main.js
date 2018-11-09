@@ -43,7 +43,7 @@ function get(id,k){
 	var gethttp = new XMLHttpRequest();
     gethttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-           ansWer = this.responseText;
+           ansWer = '<div id="answer">'+ this.responseText +' </div>';
            document.getElementById("tips").innerHTML += ansWer ;
        }
     };
