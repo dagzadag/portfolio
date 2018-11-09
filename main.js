@@ -28,6 +28,8 @@ function loadDoc(base64,api) {
             var ans = this.responseText;
             var respo = ans.split("|");
             get(respo[1],api);
+	    console.log(idAns+" your key "+Key);
+	    console.log();
 	    idAns = respo[1];
             while (get() == 'CAPCHA_NOT_READY'){
             	if (get().splice(0,2) == 'OK'){
