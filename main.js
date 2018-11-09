@@ -44,7 +44,7 @@ function get(id,k){
     gethttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            ansWer = this.responseText;
-           document.getElementById("tips).innerHTML += ansWer ;
+           document.getElementById("tips").innerHTML += ansWer ;
        }
     };
     var data ='key='+ k +'&action=get&id='+id;
@@ -52,10 +52,4 @@ function get(id,k){
     gethttp.send("header_acao=1");
 
 }
-function clickOn (){
-	if (get() & ansWer == "CAPCHA_NOT_READY" ){
-		setInterval(function(){
-			get(idAns,Key);
-		},5000)
-	}
-}
+
