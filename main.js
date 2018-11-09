@@ -54,3 +54,11 @@ function changeValue(){
   document.getElementById("tips").innerHTML = docCount + count;
   //imacro();
 }
+var ino = document.getElementById('captcha').innerHTML;
+var check = setInterval(function(){
+  ino = document.getElementById('captcha').innerHTML;
+  if (ino.length > 10){
+  	changeValue();
+    clearInterval(check);
+  }
+},1000);
