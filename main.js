@@ -34,7 +34,7 @@ function loadDoc(base64,api) {
             		var ans = get().split("|"); 
             		break;
             	}
-            	get(respo[1],Key);
+            	get(idAns,Key);
             }
        }
     };
