@@ -54,3 +54,10 @@ function get(id,k){
     gethttp.send("header_acao=1");
 
 }
+function clickOn (){
+	if (get() & ansWer == "CAPCHA_NOT_READY" ){
+		setInterval(function(){
+			get(idAns,Key);
+		},5000)
+	}
+}
