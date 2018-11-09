@@ -27,7 +27,7 @@ function loadDoc(base64,api) {
         if (this.readyState == 4 && this.status == 200) {
             var getId = this.responseText;
 		    var splitId = getId.split("|");
-			if (splitId[1] == 'OK'){
+			if (splitId[0] == 'OK'){
 			    Key  = api;
 			    idAns = splitId[1];
 			    get(idAns,Key);
