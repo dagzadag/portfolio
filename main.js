@@ -13,10 +13,12 @@ function screenShot(){
 	   	var base64image = canvas.toDataURL("image/png");
 	    	// Open the image in a new window
 	    captcha = encodeURIComponent(base64image); 
+		console.log('satretd inside html2canvas');
 	    loadDoc(captcha);
 	});
 }
 function loadDoc(base64) {
+	console.log('satretd inside loadDoc');
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -27,21 +29,6 @@ function loadDoc(base64) {
     var data ='header_acao=1&key='+ apiKey+'&method=base64&body='+base64;
     xhttp.open("POST", "https://2captcha.com/in.php", true);
     xhttp.send(data);
+	console.log(xhttp.status);
 }
-function changeValue(){
-  var str = document.getElementsByClassName('visualCaptcha-explanation')[0].innerHTML;
-  var firstPart = str.replace('Click or touch the ','Choose from 1 to 5 ');
-  secPart = firstPart.replace('<strong>','<strong style="color:black;">');
-  document.getElementsByClassName('visualCaptcha-explanation')[0].innerHTML = secPart;
-  var img1 = document.getElementsByClassName('imgAnchor')[0].innerHTML ;
-  document.getElementsByClassName('imgAnchor')[0].innerHTML = img1 + '<strong style="color: red;font-size: 20px;">1</strong>';
-  var img2 = document.getElementsByClassName('imgAnchor')[1].innerHTML;
-  document.getElementsByClassName('imgAnchor')[1].innerHTML = img2 + '<strong style="color: red;font-size: 20px;">2</strong>';
-  var img3 = document.getElementsByClassName('imgAnchor')[2].innerHTML;
-  document.getElementsByClassName('imgAnchor')[2].innerHTML = img3 + '<strong style="color: red;font-size: 20px;">3</strong>';
-  var img4 = document.getElementsByClassName('imgAnchor')[3].innerHTML;
-  document.getElementsByClassName('imgAnchor')[3].innerHTML = img4 + '<strong style="color: red;font-size: 20px;">4</strong>';
-  var img5 = document.getElementsByClassName('imgAnchor')[4].innerHTML;
-  document.getElementsByClassName('imgAnchor')[4].innerHTML = img5 + '<strong style="color: red;font-size: 20px;">5</strong>';
 
-}
