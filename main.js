@@ -25,7 +25,7 @@ function loadDoc(base64,api) {
         if (this.readyState == 4 && this.status == 200) {
             var ans = this.responseText;
             var respo = ans.split("|");
-            get(respo[1],key)
+            get(respo[1],api)
        }
     };
     var data ='header_acao=1&key='+ api+'&method=base64&body='+base64;
