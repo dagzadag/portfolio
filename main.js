@@ -40,8 +40,8 @@ function get(id,key){
             document.getElementById('tips').innerHTML += this.responseText;
        }
     };
-    var data ='header_acao=1&key='+ key +'&action=get&id='+id;
+    var data ='key='+ key +'&action=get&id='+id;
     gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
-    gethttp.send();
+    gethttp.send("header_acao=1");
 
 }
