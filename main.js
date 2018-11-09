@@ -25,7 +25,7 @@ function loadDoc(base64,api) {
         if (this.readyState == 4 && this.status == 200) {
             var ans = this.responseText;
             var respo = ans.split("|");
-            get(respo[1],key);
+            get(respo[1],api);
             while (get() == 'CAPCHA_NOT_READY'){
             	if (get().splice(0,2) == 'OK'){
             		var ans = get().split("|"); 
