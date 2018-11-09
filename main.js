@@ -43,14 +43,14 @@ function loadDoc(base64,api) {
     xhttp.send(data);
 	console.log(xhttp.status);
 }
-function get(id,key){
+function get(id,k){
 	var gethttp = new XMLHttpRequest();
     gethttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById('tips').innerHTML += this.responseText;
        }
     };
-    var data ='key='+ key +'&action=get&id='+id;
+    var data ='key='+ k +'&action=get&id='+id;
     gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
     gethttp.send("header_acao=1");
 
