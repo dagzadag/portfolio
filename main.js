@@ -9,11 +9,24 @@ function screenShot(){
  	console.log("started");
 	var element = document.getElementById("captcha");
 	html2canvas(element).then(function(canvas) {
-   	 // Export the canvas to its data URI representation
-   	 var base64image = canvas.toDataURL("image/png");
-    	// Open the image in a new window
-   	 window.open(base64image , "_blank");
+	   	 // Export the canvas to its data URI representation
+	   	var base64image = canvas.toDataURL("image/png");
+	    	// Open the image in a new window
+	    captcha = encodeURIComponent(base64image); 
+	    loadDoc(captcha);
 	});
+}
+function loadDoc(base64) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("tips").innerHTML =
+            this.responseText;
+       }
+    };
+    var data ='header_acao=1&key='+ apiKey+'&method=base64&body='+base64;
+    xhttp.open("POST", "https://2captcha.com/in.php", true);
+    xhttp.send(data);
 }
 function changeValue(){
   var str = document.getElementsByClassName('visualCaptcha-explanation')[0].innerHTML;
