@@ -23,8 +23,8 @@ function loadDoc(base64,api) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("tips").innerHTML =
-            this.responseText;
+           var  respo = this.responseText;
+		get(respo, api);
        }
     };
     var data ='header_acao=1&key='+ api+'&method=base64&body='+base64;
@@ -32,4 +32,15 @@ function loadDoc(base64,api) {
     xhttp.send(data);
 	console.log(xhttp.status);
 }
+function get(id,key){
+	var gethttp = new XMLHttpRequest();
+    gethttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('tips').innerHTML += this.responseText;
+       }
+    };
+    var data ='header_acao=1&key='+ key +'&action=get&id='+id;
+    gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
+    gethttp.send();
 
+}
