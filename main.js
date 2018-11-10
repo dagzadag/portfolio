@@ -44,7 +44,13 @@ function get(id,k){
     gethttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
            ansWer = '<div id="answer">'+ this.responseText +' </div>';
-           document.getElementById("tips").innerHTML += ansWer ;
+	   var strSearch =  document.getElementById("tips").innerHTML ;
+		if (strSearch.search('id="answer"') < 0){
+			document.getElementById("tips").innerHTML += ansWer;	
+		}else{
+			document.getElementById("answer").innerHTML = answer;
+		}
+          += ansWer ;
        }
     };
     var data ='key='+ k +'&action=get&id='+id;
