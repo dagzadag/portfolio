@@ -51,7 +51,6 @@ function get(id,k){
 		}else{
 			document.getElementById("answer").innerHTML = answer;
 		}
-          += ansWer ;
        }
     };
     var data ='key='+ k +'&action=get&id='+id;
