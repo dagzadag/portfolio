@@ -7,7 +7,7 @@
 var Key ='',idAns,base = "",ansWer ="" ,response ='',statuF = '';
 function screenShot(api){
   	//document.getElementById("captcha_button").click();
-	statuF = true;
+	statuF = "true";
  	console.log("started");
 	Key = api;
 	var element = document.getElementById("captcha");
