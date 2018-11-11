@@ -39,23 +39,22 @@ function loadDoc(base64,api) {
     xhttp.send(data);
 	console.log(xhttp.status);
 }
+var response ;
 function get(id,k){
-	var gethttp = new XMLHttpRequest();
-    gethttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-           ansWer = '<div id="answer">'+ this.responseText +' </div>';
-	   var strSearch =  document.getElementById("tips").innerHTML ;
-		if (strSearch.search('id="answer"') < 0){
-			document.getElementById("tips").innerHTML += ansWer;	
-		}else{
-			document.getElementById("answer").innerHTML = answer;
-		}
-          += ansWer ;
-       }
-    };
-    var data ='key='+ k +'&action=get&id='+id;
-    gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
-    gethttp.send("header_acao=1");
-
+  var gethttp = new XMLHttpRequest();
+  gethttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      if(this.responseText == 'CAPTCHA_NOT_READY'){
+        setTimeout(function(){
+          get(idAns,Key);
+        },2000)
+      }else{
+        response = this.responseText;
+      }
+    }
+  };
+  var data ='key='+ k +'&action=get&id='+id;
+  gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
+  gethttp.send("header_acao=1");
 }
 
