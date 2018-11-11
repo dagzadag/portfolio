@@ -10,14 +10,14 @@ function screenShot(api){
  	console.log("started");
 	Key = api;
 	var element = document.getElementById("captcha");
-	html2canvas(element).then(function(canvas,loadDoc) {
+	html2canvas(element).then(function(canvas) {
 	    // Export the canvas to its data URI representation
 	    var base64image = canvas.toDataURL("image/png");
 	    // Open the image in a new window
 	    captcha = encodeURIComponent(base64image); 
-	    base = captcha;
-	    console.log('satretd inside html2canvas');
-	    loadDoc(base,api,get);
+	    base = captcha; 
+	}).then(function() {
+	    loadDoc(base,Key,get);
 	});
 	
 }
@@ -50,11 +50,66 @@ function get(id,k){
 		   if (strSearch.search('id="answer"') < 0){
 				document.getElementById("tips").innerHTML += ansWer;	
 		   }else{
-				document.getElementById("answer").innerHTML = answer;
+				document.getElementById("answer").innerHTML = "";
+				document.getElementById("tips").innerHTML += ansWer;
 		   }
        }
     };
-    var data ='key='+ k +'&action=get&id='+id;
+    var data ='key='+ Key +'&action=get&id='+idAns;
+    gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
+    gethttp.send("header_acao=1");
+
+}function screenShot(api){
+  	//document.getElementById("captcha_button").click();
+ 	console.log("started");
+	Key = api;
+	var element = document.getElementById("captcha");
+	html2canvas(element).then(function(canvas) {
+	    // Export the canvas to its data URI representation
+	    var base64image = canvas.toDataURL("image/png");
+	    // Open the image in a new window
+	    captcha = encodeURIComponent(base64image); 
+	    base = captcha; 
+	}).then(function() {
+	    loadDoc(base,Key,get);
+	});
+	
+}
+function loadDoc(base64,api,callback) {
+	console.log('satretd inside loadDoc');
+    var xhttp = new XMLHttpRequest();
+     xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var getId = this.responseText;
+		    var splitId = getId.split("|");
+			if (splitId[0] == 'OK'){
+			    Key  = api;
+			    idAns = splitId[1];
+			    callback(idAns,Key);
+			}
+       }
+    };
+    var data ='header_acao=1&key='+ api+'&method=base64&body='+base64;
+    xhttp.open("POST", "https://2captcha.com/in.php", true);
+    xhttp.send(data);
+	console.log(xhttp.status);
+
+}
+function get(id,k){
+	var gethttp = new XMLHttpRequest();
+    gethttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+           ansWer = '<div id="answer">'+ this.responseText +' </div>';
+		   var strSearch =  document.getElementById("tips").innerHTML ;
+		   if (strSearch.search('id="answer"') < 0){
+				document.getElementById("tips").innerHTML += ansWer;	
+		   }else{
+				document.getElementById("answer").innerHTML = "";
+				document.getElementById("tips").innerHTML += ansWer;
+		   }
+       }
+    };
+    var data ='key='+ Key +'&action=get&id='+idAns;
     gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
     gethttp.send("header_acao=1");
 
