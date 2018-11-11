@@ -51,7 +51,7 @@ function get(id,k){
           get(idAns,Key);
         },2000)
       }else{
-        conole.log('iam response')
+        console.log('iam response');
         response = this.responseText;
       }
     }
