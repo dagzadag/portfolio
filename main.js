@@ -37,7 +37,7 @@ function changeValue(){
 	//var hour = dater.getHours();
 	//var year = dater.getFullYear();
 	var result = issue[Object.keys(issue)[1]] ;
-	issue.value = 3;
+	console.log(issue.value);
   var count = '<p  id="waitSec">'+result+'</p>';
   var docCount = document.getElementById("tips").innerHTML;
   document.getElementById("tips").innerHTML = docCount + count;
