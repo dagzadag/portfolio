@@ -68,7 +68,9 @@ function test(call){
 	var sliceR = idA.split('|');
 	if (sliceR[0] == "OK"){
 	  document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
-		call();
+	  setTimeout(function(){
+		call();  
+	  },issue.waiting);
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
 	}
