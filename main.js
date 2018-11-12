@@ -78,4 +78,4 @@ function test(call){
 	}
 }
 function imacrosErr (){console.log('captcha err'+ response); }
-function imacroRes() {try{var e_m64 = "VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEFzZXQlMjAhZXJyb3JpZ25vcmUlMjB5ZXMlMEElMEFUQUclMjBQT1MlM0QxJTIwVFlQRSUzRElOUFVUJTNBU1VCTUlUJTIwQVRUUiUzRElEJTNBYnV0dG9uJTBBVEFHJTIwUE9TJTNEMSUyMFRZUEUlM0RJTlBVVCUzQVNVQk1JVCUyMEFUVFIlM0RJRCUzQWNsb3NlQnRuJTBBJTBBcmVmcmVzaA==", n64 = "JTIzQ3VycmVudC5paW0=";if(!/^(?:chrome|https?|file)/.test(location)){alert('iMacros: Open webpage to run a macro.');return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent("CustomEvent");evt.initCustomEvent("iMacrosRunMacro", true, true, macro);window.dispatchEvent(evt);}catch(e){alert('iMacros Bookmarklet error: '+e.toString());}}
+function imacroRes (){console.log('captcha solved'+ response); }
