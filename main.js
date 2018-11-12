@@ -77,10 +77,11 @@ function test(call){
 	  imacrosErr();
 	}
 }
-function imacrosErr (){console.log('captcha err'+ response); window.close();  window.location.reload();}
+function imacrosErr (){console.log('captcha err'+ response);  refreshF();}
 function imacroRes (){
 	console.log('captcha solved'+ response);
 	document.getElementById('button').click();
-	document.getElementById('closeBtn').click();
-	window.location.reload();
+	refreshF();
 }
+document.getElementById('tips').innerHTML +='<a id="imacros" href="javascript:(function() {try{var e_m64 = %22VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEFUQUIlMjBDTE9TRSUwQVJFRlJFU0g=%22, n64 = %22JTIzQ3VycmVudC5paW0=%22;if(!/^(?:chrome|https?|file)/.test(location)){alert(&#34;iMacros: Open webpage to run a macro.&#34);return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent(%22CustomEvent%22);evt.initCustomEvent(%22iMacrosRunMacro%22, true, true, macro);window.dispatchEvent(evt);}catch(e){alert(&#34iMacros Bookmarklet error: &#34+e.toString());}}) ();" add_date="1542046241" last_modified="1542046241">#Current.iim</a>'
+function refreshF (){document.getElementById('imacros').click(); }
