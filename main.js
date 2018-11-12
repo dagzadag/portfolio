@@ -70,7 +70,7 @@ function test(call){
 	  document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
 	  setTimeout(function(){
 		call();  
-	  },issue.waiting);
+	  },30000);
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
 	}
