@@ -71,10 +71,11 @@ function test(call){
 	  document.getElementById('captcha_button').click();
 	  console.log('captcha solved'+ response);
 	  document.getElementById('clickEx').click();
-	  refreshF();
+	  
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
-	  console.log("slice"+sliceR[0] !== "OK" + 'err'+ idA[0] == "E" +(sliceR[0] !== "OK" && idA[0] == "E"));  
+	  console.log("slice"+sliceR[0] !== "OK" + 'err'+ idA[0] == "E" +(sliceR[0] !== "OK" && idA[0] == "E"));
+	  refreshF();
 	}
 }
 
