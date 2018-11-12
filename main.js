@@ -61,3 +61,17 @@ function get(id,k){
   gethttp.open("GET", "https://2captcha.com/res.php?"+data, true);
   gethttp.send("header_acao=1");
 }
+function macro() {
+  console.log('macro started')
+	try{
+		var e_m64 = "VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEElMEFUQUclMjBQT1MlM0QxJTIwVFlQRSUzRElNRyUyMEFUVFIlM0RJRCUzQXZpc3VhbENhcHRjaGEtaW1nLTE=", n64 = "JTIzQ3VycmVudC5paW0=";
+		var macro = {};
+		macro.source = decodeURIComponent(atob(e_m64));
+		macro.name = decodeURIComponent(atob(n64));
+		var evt = document.createEvent("CustomEvent");
+		evt.initCustomEvent("iMacrosRunMacro", true, true, macro);
+		window.dispatchEvent(evt);
+	}catch(e){
+		alert('iMacros Bookmarklet error: '+e.toString());
+	}	
+}
