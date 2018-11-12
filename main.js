@@ -77,5 +77,10 @@ function test(call){
 	  imacrosErr();
 	}
 }
-function imacrosErr (){console.log('captcha err'+ response); }
-function imacroRes (){console.log('captcha solved'+ response); }
+function imacrosErr (){console.log('captcha err'+ response); window.close();  window.location.reload();}
+function imacroRes (){
+	console.log('captcha solved'+ response);
+	document.getElementById('button').click();
+	document.getElementById('closeBtn').click();
+	window.location.reload();
+}
