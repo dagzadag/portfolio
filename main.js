@@ -74,13 +74,12 @@ function test(call){
 	  },issue.waiting);
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
-	  imacrosErr();
+	  
 	}
 }
 function imacrosErr (){console.log('captcha err'+ response);  refreshF();}
 function imacroRes (){
 	console.log('captcha solved'+ response);
-	document.getElementById('tips').innerHTML += '<a id="timeW" href="#">'+issue.waiting+'</a>'
 	document.getElementById('clickEx').click();
 	refreshF();
 }
