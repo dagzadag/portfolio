@@ -68,9 +68,7 @@ function test(call){
 	var sliceR = idA.split('|');
 	if (sliceR[0] == "OK"){
 	  document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
-	  setTimeout(function(){
-		call();  
-	  },30000);
+	  console.log(issue.waiting);
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
 	  imacrosErr();
