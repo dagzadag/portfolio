@@ -69,20 +69,15 @@ function test(call){
 	if (sliceR[0] == "OK"){
 	  document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
 	  document.getElementById('captcha_button').click();
-	  setTimeout(function(){
-	  call();
-	  },issue.waiting);
+	  console.log('captcha solved'+ response);
+	  document.getElementById('clickEx').click();
+	  refreshF();
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
-	  
+	  console.log("slice"+sliceR[0] !== "OK" + 'err'+ idA[0] == "E" +(sliceR[0] !== "OK" && idA[0] == "E"));  
 	}
 }
-function imacrosErr (){console.log('captcha err'+ response);  refreshF();}
-function imacroRes (){
-	console.log('captcha solved'+ response);
-	document.getElementById('clickEx').click();
-	refreshF();
-}
+
 document.getElementById('tips').innerHTML += '<a id="clickEx" href="javascript:(function() {try{var e_m64 = %22VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEFTRVQlMjAhRVhUUkFDVF9URVNUX1BPUFVQJTIwTk8lMEFTRVQlMjAhRVJST1JJR05PUkUlMjBZRVMlMEFTRVQlMjAhRVhUUkFDVCUyME5VTEwlMEFUQUclMjBQT1MlM0QxJTIwVFlQRSUzREElMjBBVFRSJTNESUQlM0F0aW1lVyUyMEVYVFJBQ1QlM0RUWFQlMEFTRVQlMjAhVkFSMSUyMCU3QiU3QiFFWFRSQUNUJTdEJTdEJTBBV0FJVCUyMFNFQ09ORFMlMjAlM0QlMjAlN0IlN0IhVkFSMSU3RCU3RCUwQVRBRyUyMFBPUyUzRDElMjBUWVBFJTNEQSUyMEFUVFIlM0RJRCUzQWJ1dHRvbg==%22, n64 = %22Y2xpY2tDYXA=%22;if(!/^(?:chrome|https?|file)/.test(location)){alert(&#34;iMacros: Open webpage to run a macro.&#34;);return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent(%22CustomEvent%22);evt.initCustomEvent(%22iMacrosRunMacro%22, true, true, macro);window.dispatchEvent(evt);}catch(e){alert(&#34;iMacros Bookmarklet error: &#34;+e.toString());}}) ();" ></a>'
 document.getElementById('tips').innerHTML +='<a id="imacros" href="javascript:(function() {try{var e_m64 = %22VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEFUQUIlMjBDTE9TRSUwQVJFRlJFU0g=%22, n64 = %22JTIzQ3VycmVudC5paW0=%22;if(!/^(?:chrome|https?|file)/.test(location)){alert(&#34;iMacros: Open webpage to run a macro.&#34);return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent(%22CustomEvent%22);evt.initCustomEvent(%22iMacrosRunMacro%22, true, true, macro);window.dispatchEvent(evt);}catch(e){alert(&#34iMacros Bookmarklet error: &#34+e.toString());}}) ();" add_date="1542046241" last_modified="1542046241"></a>'
 function refreshF (){document.getElementById('imacros').click(); }
