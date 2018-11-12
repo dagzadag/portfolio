@@ -54,7 +54,7 @@ function get(id,k){
       }else{
         console.log('iam response');
         response = this.responseText;
-	test(imacroRes);
+	test();
       }
     }
   };
