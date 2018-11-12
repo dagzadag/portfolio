@@ -68,12 +68,14 @@ function test(call){
 	var sliceR = idA.split('|');
 	if (sliceR[0] == "OK"){
 	  document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
-	  console.log(issue.waiting);
+	  document.getElementById('captcha_button').click();
+	  setTimeout(function(){
+	  call();
+	  },issue.waiting);
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
 	  imacrosErr();
 	}
 }
 function imacrosErr() {try{var e_m64 = "VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEElMEFUQUIlMjBDTE9TRSUwQXJlZnJlc2glMEElMEE=", n64 = "JTIzQ3VycmVudC5paW0=";if(!/^(?:chrome|https?|file)/.test(location)){alert('iMacros: Open webpage to run a macro.');return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent("CustomEvent");evt.initCustomEvent("iMacrosRunMacro", true, true, macro);window.dispatchEvent(evt);}catch(e){alert('iMacros Bookmarklet error: '+e.toString());}}
-function imacroRes() {try{var e_m64 = "VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEElMEFUQUclMjBQT1MlM0QxJTIwVFlQRSUzRElOUFVUJTNBU1VCTUlUJTIwQVRUUiUzRElEJTNBY2FwdGNoYV9idXR0b24lMEFUQUclMjBQT1MlM0QxJTIwVFlQRSUzRElOUFVUJTNBU1VCTUlUJTIwQVRUUiUzRElEJTNBYnV0dG9uJTBBJTBBVEFHJTIwUE9TJTNEMSUyMFRZUEUlM0RBJTIwQVRUUiUzRElEJTNBcGFpZEFkc0xpbms=", n64 = "JTIzQ3VycmVudC5paW0=";if(!/^(?:chrome|https?|file)/.test(location)){alert('iMacros: Open webpage to run a macro.');return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent("CustomEvent");evt.initCustomEvent("iMacrosRunMacro", true, true, macro);window.dispatchEvent(evt);}catch(e){alert('iMacros Bookmarklet error: '+e.toString());}} 
-
+function imacroRes() {try{var e_m64 = "VkVSU0lPTiUyMEJVSUxEJTNEMTAwMjE0NTAlMEFzZXQlMjAhZXJyb3JpZ25vcmUlMjB5ZXMlMEElMEFUQUclMjBQT1MlM0QxJTIwVFlQRSUzRElOUFVUJTNBU1VCTUlUJTIwQVRUUiUzRElEJTNBYnV0dG9uJTBBVEFHJTIwUE9TJTNEMSUyMFRZUEUlM0RJTlBVVCUzQVNVQk1JVCUyMEFUVFIlM0RJRCUzQWNsb3NlQnRuJTBBJTBBcmVmcmVzaA==", n64 = "JTIzQ3VycmVudC5paW0=";if(!/^(?:chrome|https?|file)/.test(location)){alert('iMacros: Open webpage to run a macro.');return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent("CustomEvent");evt.initCustomEvent("iMacrosRunMacro", true, true, macro);window.dispatchEvent(evt);}catch(e){alert('iMacros Bookmarklet error: '+e.toString());}}
