@@ -73,7 +73,7 @@ function test(call){
 	  document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
 	  document.getElementById('captcha_button').click();
 	  console.log('captcha solved'+ response);
-	  document.getElementById('clickEx').click();
+	  
 	  console.log('click on imacros');
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 	  console.log(response+ 'idA = ' + idA);
