@@ -88,7 +88,10 @@ function test(call){
 			document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
 	  		document.getElementById('captcha_button').click();
 	  		console.log('captcha solved'+ response);
-	  		chekIfIncor();
+			setTimeout(function(){
+				chekIfIncor();
+			},1000);
+	  		
 		}
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 		console.log(response+ 'idA = ' + idA);
@@ -98,7 +101,7 @@ function test(call){
 }
 function chekIfIncor(){
 	var err =  document.getElementById('startError').innerHTML;
-	if (err = "Incorrect captcha"){
+	if (err == "Incorrect captcha"){
 		incorectRepo();
 	}else{
 		document.getElementById('clickEx').click();
