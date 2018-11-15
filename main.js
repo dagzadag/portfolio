@@ -82,7 +82,7 @@ function test(call){
 	idA = response;
 	var sliceR = idA.split('|');
 	if (sliceR[0] == "OK"){
-		if (!(slicer[1] >= 1 && slicer[1] <= 5)){
+		if (!(sliceR[1] >= 1 && sliceR[1] <= 5)){
 			incorectRepo();
 		}else{
 			document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
