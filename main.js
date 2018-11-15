@@ -88,8 +88,7 @@ function test(call){
 			document.getElementById('visualCaptcha-img-'+(sliceR[1] - 1)).click();
 	  		document.getElementById('captcha_button').click();
 	  		console.log('captcha solved'+ response);
-	  		document.getElementById('clickEx').click();
-	  		console.log('click on imacros');	
+	  		chekIfIncor();
 		}
 	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
 		console.log(response+ 'idA = ' + idA);
@@ -97,5 +96,13 @@ function test(call){
 		refreshF();
 	}
 }
-
+function chekIfIncor(){
+	var err =  document.getElementById('startError').innerHTML;
+	if (err = "Incorrect captcha"){
+		incorectRepo();
+	}else{
+		document.getElementById('clickEx').click();
+	  	console.log('click on imacros');	
+	}
+}
 function refreshF (){document.getElementById('imacros').click(); }
