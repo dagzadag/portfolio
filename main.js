@@ -1,9 +1,4 @@
-var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-var months = ['January', 'Februrie', 'March', 'April', 'May', 'Juan', 'July', 'Aout', 'September', 'October', 'November', 'Dicember'];
-var dateTime = new Date();
-var day = dateTime.getDay();
-var month = dateTime.getMonth();
-document.querySelector("#date").textContent = days[day]+","+months[month]+"/"++ "/" + dateTime.getFullYear() ;
+
 /*!
  * html2canvas 1.0.0-alpha.12 <https://html2canvas.hertzen.com>
  * Copyright (c) 2018 Niklas von Hertzen <https://hertzen.com>
