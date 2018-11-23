@@ -102,7 +102,9 @@ function chekIfIncor(){
 	if (err == "Incorrect captcha"){
 		incorectRepo();
 	}else{
-		document.getElementById('nextAdBtn').click();
+		setTimeout(function(){
+			document.getElementById('nextAdBtn').click();
+		},issue.waiting + 1);
 		console.log('click on imacros');	
 	}
 }
