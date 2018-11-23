@@ -110,6 +110,6 @@ function chekIfIncor(){
 }
 function refreshF (){
 	
-	document.getElementById('closeBtn').click(); 
+	document.getElementById('visualCaptcha-refresh-button').click(); 
 }
 
