@@ -45,7 +45,7 @@ function get(id,k){
   var gethttp = new XMLHttpRequest();
   gethttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      if(this.responseText == 'CAPTCHA_NOT_READY'){
+      if(this.responseText == "CAPCHA_NOT_READY"){
         setTimeout(function(){
           get(idAns,Key);
         },2000)
