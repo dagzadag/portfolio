@@ -81,7 +81,7 @@ function checkAnswer () {
 		},3000);
 	}
 }
-functtion extractAnswer(){
+function extractAnswer(){
 	splitedResponse = response.split('|');
 	console.log("Extracting answer !!! ");
 	if (splitedResponse[0] == "OK"){
