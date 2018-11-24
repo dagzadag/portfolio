@@ -7,7 +7,7 @@
 var Key ='',idAns,base = "",ansWer ="";
 function screenShot(api){
   	//document.getElementById("captcha_button").click();
- 	console.log("started");
+ 	console.log("start capturing captcha");
 	Key = api;
 	var element = document.getElementById("captcha");
 	html2canvas(element).then(function(canvas) {
@@ -16,12 +16,12 @@ function screenShot(api){
 	    // Open the image in a new window
 	    captcha = encodeURIComponent(base64image); 
 	    base = captcha;
-	    console.log('satretd inside html2canvas');
+	    console.log("captcha has been captured");
 	    loadDoc(captcha,api);
 	});
 }
 function loadDoc(base64,api) {
-	console.log('satretd inside loadDoc');
+	console.log("send the captcha to 2captcha");
     var xhttp = new XMLHttpRequest();
      xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -30,6 +30,7 @@ function loadDoc(base64,api) {
 			if (splitId[0] == 'OK'){
 			    Key  = api;
 			    idAns = splitId[1];
+			    console.log("captcha sent and the id is : " + idAns);
 			    get(idAns,Key);
 			}
        }
@@ -37,10 +38,10 @@ function loadDoc(base64,api) {
     var data ='header_acao=1&key='+ api+'&method=base64&body='+base64;
     xhttp.open("POST", "https://2captcha.com/in.php", true);
     xhttp.send(data);
-	console.log(xhttp.status);
 }
 var response ;
 function get(id,k){
+  console.log("waiting the captcha to be solved");
   var gethttp = new XMLHttpRequest();
   gethttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -50,6 +51,7 @@ function get(id,k){
         },2000)
       }else {
         response = this.responseText;
+	console.log("captcha solved the answer is " +response);
       }
     }
   };
