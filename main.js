@@ -48,7 +48,7 @@ function get(id,k){
         setTimeout(function(){
           get(idAns,Key);
         },2000)
-      }else{
+      }else {
         response = this.responseText;
       }
     }
