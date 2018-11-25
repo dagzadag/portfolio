@@ -73,7 +73,7 @@ function checkAnswer () {
 			}
 		},3000);
 	}else {
-		document.querySelector("#visualCaptcha-img-"+splitedResponse[1]).click();
+		document.querySelector("#visualCaptcha-img-"+(splitedResponse[1] - 1)).click();
 		document.querySelector("#captcha_button").click();
 		setTimeout(function(){
 			console.log('cheking the answer if correct');
@@ -98,7 +98,7 @@ function extractAnswer(){
 		}else{
 			checkAnswer();
 		}
-	}else if(sliceR[0] !== "OK" && idA[0] == "E"){
+	}else if(splitedResponse[0] !== "OK" && idA[0] == "E"){
 		console.log("error solving captcha "+ response);
 		closeAndRefresh();
 	}
