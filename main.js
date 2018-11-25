@@ -64,6 +64,7 @@ function get(id,k){
 function checkAnswer () {
 	var pageTitle = document.querySelector("title").textContent;
 	if (pageTitle === "PaidVerts: Login") {
+		document.querySelector("#visualCaptcha-img-"+(parseInt(splitedResponse[1]) - 1)).click();
 		document.querySelector(".btn").click();
 		console.log('cheking the answer if correct');
 		setTimeout(function(){
