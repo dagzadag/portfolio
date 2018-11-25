@@ -126,7 +126,7 @@ function closeAndRefresh(){
 }
 function iMacros() {
 	try{
-		var iimacr = "VERSION BUILD=10021450 \nWATING SECONDS = "+issue.waiting+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
+		var iimacr = "VERSION BUILD=10021450 \nWAITING SECONDS = "+issue.waiting+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
 		var macro = {};
 		macro.source = iimacr;
 		macro.name = "Geeko";
