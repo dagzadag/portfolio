@@ -73,7 +73,7 @@ function checkAnswer () {
 			}
 		},3000);
 	}else {
-		document.querySelector("#visualCaptcha-img-"+(splitedResponse[1] - 1)).click();
+		document.querySelector("#visualCaptcha-img-"+(parseInt(splitedResponse[1]) - 1)).click();
 		document.querySelector("#captcha_button").click();
 		setTimeout(function(){
 			console.log('cheking the answer if correct');
