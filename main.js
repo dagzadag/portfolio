@@ -81,6 +81,7 @@ function checkAnswer () {
 			if (errAppers !== "") {
 				incorectRepo();
 			}else {
+				console.log('wating ' + issue.wating);
 				setTimeout(function () {
 					document.querySelector("#nextAdBtn").click();
 				},issue.wating);
@@ -98,7 +99,7 @@ function extractAnswer(){
 		}else{
 			checkAnswer();
 		}
-	}else if(splitedResponse[0] !== "OK" && idA[0] == "E"){
+	}else if(splitedResponse[0] !== "OK" && response[0] == "E"){
 		console.log("error solving captcha "+ response);
 		closeAndRefresh();
 	}
