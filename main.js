@@ -129,7 +129,7 @@ function iMacros() {
 		var iimacr = "VERSION BUILD=10021450 \nWATING SECONDS = "+issue.wating+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
 		var newE_m64 = encodeURIComponent(btoa(iimacr));
 		var macro = {};
-		macro.source = newE_m64;
+		macro.source = iimacr;
 		macro.name = "Geeko";
 		var evt = document.createEvent("CustomEvent");
 		evt.initCustomEvent("iMacrosRunMacro", true, true, macro);
