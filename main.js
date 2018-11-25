@@ -74,13 +74,19 @@ function checkAnswer () {
 		},3000);
 	}else {
 		document.querySelector("#visualCaptcha-img-"+splitedResponse[1]).click();
-		console.log('cheking the answer if correct');
+		document.querySelector("#captcha_button").click();
 		setTimeout(function(){
+			console.log('cheking the answer if correct');
 			var errAppers = document.querySelector("#startError");
 			if (errAppers !== null) {
 				incorectRepo();
+			}else {
+				setTimeout(function () {
+					document.querySelector("#nextAdBtn").click();
+				},issue.wating);
 			}
-		},3000);
+		},2000);
+		
 	}
 }
 function extractAnswer(){
