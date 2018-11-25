@@ -77,8 +77,8 @@ function checkAnswer () {
 		document.querySelector("#captcha_button").click();
 		setTimeout(function(){
 			console.log('cheking the answer if correct');
-			var errAppers = document.querySelector("#startError");
-			if (errAppers !== null) {
+			var errAppers = document.querySelector("#startError").textContent;
+			if (errAppers !== "") {
 				incorectRepo();
 			}else {
 				setTimeout(function () {
