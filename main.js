@@ -82,14 +82,15 @@ function checkAnswer () {
 			if (errAppers !== "") {
 				incorectRepo();
 			}else {
-				console.log('wating ' + issue.wating);
-				setTimeout(function () {
-					document.querySelector("#nextAdBtn").click();
-				},issue.wating);
+				clickAd();
 			}
 		},2000);
 		
 	}
+}
+function clickAd(){
+	document.querySelector("#captcha").innerHTML += '<a onclick="iMacros()" id="clickAdId"></a>';
+	document.querySelector("#clickAdId").click();
 }
 function extractAnswer(){
 	splitedResponse = response.split('|');
@@ -120,6 +121,20 @@ function incorectRepo () {
 }
 
 function closeAndRefresh(){
-	document.querySelector("#captcha").innerHTML += '<a href="javascript:(function() {try{var e_m64 = %22VEFCIENMT1NFIApVUkwgR09UTz1odHRwczovL3d3dy5wYWlkdmVydHMuY29tL21lbWJlci9wYWlkX2Fkcy5odG1s%22, n64 = %22JTIzQ3VycmVudC5paW0=%22;if(!/^(?:chrome|https?|file)/.test(location)){alert(&#34;iMacros: Open webpage to run a macro.&#34;);return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent(%22CustomEvent%22);evt.initCustomEvent(%22iMacrosRunMacro%22, true, true, macro);window.dispatchEvent(evt);}catch(e){alert(&#34;iMacros Bookmarklet error: &#34;+e.toString());}}) ();" id="imacrosId"></a>';
+	document.querySelector("#captcha").innerHTML += '<a href="javascript:(function() {try{var e_m64 = %22VEFCIENMT1NFIApUQUIgT1BFTiAKVVJMIEdPVE89aHR0cHM6Ly93d3cucGFpZHZlcnRzLmNvbS9tZW1iZXIvcGFpZF9hZHMuaHRtbA%3D%3D%22, n64 = %22JTIzQ3VycmVudC5paW0=%22;if(!/^(?:chrome|https?|file)/.test(location)){alert(&#34;iMacros: Open webpage to run a macro.&#34;);return;}var macro = {};macro.source = decodeURIComponent(atob(e_m64));macro.name = decodeURIComponent(atob(n64));var evt = document.createEvent(%22CustomEvent%22);evt.initCustomEvent(%22iMacrosRunMacro%22, true, true, macro);window.dispatchEvent(evt);}catch(e){alert(&#34;iMacros Bookmarklet error: &#34;+e.toString());}}) ();" id="imacrosId"></a>';
 	document.querySelector("#imacrosId").click();
+}
+function iMacros() {
+	try{
+		var iimacr = "VERSION BUILD=10021450 \nWATING SECONDS = "+issue.wating+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
+		var newE_m64 = encodeURIComponent(btoa(iimacr));
+		var macro = {};
+		macro.source = newE_m64;
+		macro.name = "Geeko";
+		var evt = document.createEvent("CustomEvent");
+		evt.initCustomEvent("iMacrosRunMacro", true, true, macro);
+		window.dispatchEvent(evt);
+	}catch(e){
+		console.log("iMacros Bookmarklet error: "+e.toString());
+	}
 }
