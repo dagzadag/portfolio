@@ -139,7 +139,7 @@ function iMacros() {
 }
 function closeMacros(){
 	try{
-		var iimacr = "VERSION BUILD=10021450 \nTAB OPEN\nTAB T=2\nTAB T=1\nTAB CLOSE\nURL GOTO=https://www.paidverts.com/member/paid_ads.html";
+		var iimacr = "VERSION BUILD=10021450 \nset !errorignore yes \nset !timeout_step  10 \nset !timeout_page  10\nTAB OPEN\nTAB T=2\nTAB T=1\nTAB CLOSE\nURL GOTO=https://www.paidverts.com/member/paid_ads.html";
 		var macro = {};
 		macro.source = iimacr;
 		macro.name = "GeekoClose";
