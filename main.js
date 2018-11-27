@@ -126,7 +126,7 @@ function closeAndRefresh(){
 }
 function iMacros() {
 	try{
-		var iimacr = "VERSION BUILD=10021450 \nWAIT SECONDS = "+issue.waiting+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
+		var iimacr = "VERSION BUILD=10021450 \nset !errorignore yes \nset !timeout_step  10 \nset !timeout_page  10\nWAIT SECONDS = "+issue.waiting+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
 		var macro = {};
 		macro.source = iimacr;
 		macro.name = "Geeko";
