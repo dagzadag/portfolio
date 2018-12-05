@@ -125,7 +125,7 @@ function closeAndRefresh(){
 	document.querySelector("#imacrosId").click();
 }
 function iMacros() {
-	document.qureySelector("body").focus();
+	document.querySelector('body').focus();
 	try{
 		var iimacr = "VERSION BUILD=10021450 \nset !errorignore yes \nset !timeout_step  10 \nset !timeout_page  10\nWAIT SECONDS = "+issue.waiting+"\nTAG POS=1 TYPE=INPUT:SUBMIT ATTR=ID:nextAdBtn";
 		var macro = {};
@@ -134,7 +134,7 @@ function iMacros() {
 		var evt = document.createEvent("CustomEvent");
 		evt.initCustomEvent("iMacrosRunMacro", true, true, macro);
 		window.dispatchEvent(evt);
-		document.qureySelector("body").focus();
+		document.querySelector('body').focus();
 	}catch(e){
 		console.log("iMacros Bookmarklet error: "+e.toString());
 	}
