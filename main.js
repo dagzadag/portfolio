@@ -36,7 +36,7 @@ function loadDoc(base64,api) {
 			}
 		}
 	};
-	var data ='header_acao=1&key='+ api+'&method=base64&body='+base64;
+	var data ='header_acao=1&numeric=1&min_len=1&max_len=1&key='+ api+'&method=base64&body='+base64;
 	xhttp.open("POST", "https://2captcha.com/in.php", true);
 	xhttp.send(data);
 }
