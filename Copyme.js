@@ -12,12 +12,14 @@ function generate() {
    	var three = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 18);
     	var four = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 24);
     	var five = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 30);
+	setTimeout(function (){
 	writeUserData(  ref,one,one,tow,tow,tow,three,four,five)
+	},6000)
+	
 }
 
 function writeUserData(  a,price3,price6,price9,price12,price13,price18,price24,price30) {
-  firebase.database().ref("/").set({
-	  ref:a,
+  firebase.database().ref(a).set({
     price3: price3,
     price6: price6,
     price9:price9,
