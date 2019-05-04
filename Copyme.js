@@ -14,7 +14,7 @@ function generate() {
     	var four = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 24);
     	var five = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 30);
 	setTimeout(function (){
-	writeUserData(  ref,one,one,tow,tow,tow,three,four,five)
+	writeUserData(  ref,one.responseJSON.TotalRembourser,one.responseJSON.TotalRembourser,tow.responseJSON.TotalRembourser,tow.responseJSON.TotalRembourser,tow.responseJSON.TotalRembourser,three.responseJSON.TotalRembourser,four.responseJSON.TotalRembourser,five.responseJSON.TotalRembourser)
 	},6000)
 	
 }
