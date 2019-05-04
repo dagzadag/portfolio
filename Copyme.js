@@ -12,7 +12,7 @@ function generate() {
    	var three = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 18);
     	var four = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 24);
     	var five = $.getJSON('/' + k + '/DOSSIER/CalculTotalRembourser?NbEcheance=' + 30);
-	writeUserData(  one,one,tow,tow,tow,three,four,five)
+	writeUserData(  ref,one,one,tow,tow,tow,three,four,five)
 }
 
 function writeUserData( a, price3,price6,price9,price12,price13,price18,price24,price30) {
