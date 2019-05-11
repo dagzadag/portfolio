@@ -18,8 +18,7 @@ function generate() {
 }
 
 function writeUserData( a, price3,price6,price9,price12,price13,price18,price24,price30) {
-  firebase.database().ref('refrences/').set({
-  	ref:a,
+  firebase.database().ref('refrences/'+a).set({
     price3: price3,
     price6: price6,
     price9:price9,
